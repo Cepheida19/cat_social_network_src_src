@@ -1,0 +1,19 @@
+import React from "react";
+import s from "./Header.module.css";
+import { NavLink } from "react-router-dom";
+import paw from "../../assets/images/paw1.png";
+
+const Header = (props) => {
+	return (
+		<header className={s.header}>
+            {/* <img src="data:image/png;base64,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"/> */}
+            <img src={paw} />
+            <div>Cat's link</div>
+        <div className={s.loginBlock}>
+            {props.isAuth ? <div>{props.login} - <button onClick={props.logout}>Log out</button></div> :
+            <NavLink to={"/login"}>Login</NavLink> }
+        </div>
+        </header>);
+}
+
+export default Header;
